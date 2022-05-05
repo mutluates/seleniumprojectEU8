@@ -36,7 +36,7 @@ public class TC1_CydeoVerifications {
             System.out.println("Title verification FAİLED!!!");
         }
 
-
+        driver.close();
 
     }
 
