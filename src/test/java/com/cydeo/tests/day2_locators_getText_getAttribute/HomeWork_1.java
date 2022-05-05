@@ -7,28 +7,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TC3_GoogleSearch {
+public class HomeWork_1 {
 
     public static void main(String[] args) {
 
-
-       // TC#3: Google search
-       // 1- Open a Chrome browser
+        // TC #1: Etsy Title Verification
+        //  1. Open Chrome browser
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-       // 2- Go to: https://google.com
-        driver.get("https://google.com");
+        //  2. Go to https://www.etsy.com
+        driver.navigate().to("https://www.etsy.com");
 
-       // 3- Write “apple” in search box
-       // 4- PRESS ENTER using Keys.ENTER
-        WebElement googleSearchBox = driver.findElement(By.name("q"));
-        googleSearchBox.sendKeys("apple" + Keys.ENTER);
+        //  3. Search for “wooden spoon”
+        WebElement searchBox = driver.findElement(By.name("search_query"));
+        searchBox.sendKeys("wooden spoon" + Keys.ENTER);
 
-       // 5- Verify title:
-       // Expected: Title should start with “apple” word
-        String expectedInTitle = "apple";
+        //  4. Verify title:
+        //     Expected: “Wooden spoon | Etsy”
+        String expectedInTitle = "Wooden spoon | Etsy";
         String actualTitle = driver.getTitle();
 
         if (actualTitle.equals(expectedInTitle)){
@@ -36,7 +34,7 @@ public class TC3_GoogleSearch {
         }else {
             System.out.println("Title verification FAİLED!");
         }
-
+        driver.close();
 
     }
 }
