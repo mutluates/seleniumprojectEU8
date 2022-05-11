@@ -47,7 +47,7 @@ public class TC1_cssSelector_practice {
 
         //Locate inputBox using xpath contains method
         //tagName[contains(@attribute,'value')]
-        WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[@name='email']"));
+        WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[@type='text']"));
 
         //e. “Retrieve password” button
         //button[@type='submit']
