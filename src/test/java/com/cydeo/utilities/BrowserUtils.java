@@ -26,6 +26,13 @@ public class BrowserUtils {
 
     }
 
+    /*
+    This method accepts 3 arguments.
+    Arg1: webdriver
+    Arg2: expectedInUrl : for verify if the url containns given String.
+        -  If condition matches, will break loop.
+    Arg3: expectedInTitle to be compered against actualTitle
+     */
 
     public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl, String expectedInTitle) {
 
