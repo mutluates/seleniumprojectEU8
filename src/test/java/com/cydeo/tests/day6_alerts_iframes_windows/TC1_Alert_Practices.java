@@ -21,7 +21,7 @@ public class TC1_Alert_Practices {
 
         //TC #1: Information alert practice
         //1. Open browser
-        driver = WebDriverFactory.getDriver("edge");
+        driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -62,10 +62,81 @@ public class TC1_Alert_Practices {
 
     }
 
+    @Test
+    public void alert_test2() throws InterruptedException {
+
+        //TC #2: Confirmation alert practice
+
+        //3. Click to “Click for JS Confirm” button
+        WebElement informationConfirmButton = driver.findElement(By.xpath("//button[@onclick='jsConfirm()']"));
+
+        informationConfirmButton.click();
+        Thread.sleep(2000);
+
+        //4. Click to OK button from the alert
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+
+
+        //5. Verify “You clicked: Ok” text is displayed.
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+
+        Assert.assertTrue(resultText.isDisplayed(),"You clicked: Ok");
+
+        String expectedResult = "You clicked: Ok";
+        String actualResult = resultText.getText();
+
+        Assert.assertEquals(actualResult,expectedResult,"Actual result test is NOT as expected !!!");
+
+
+    }
+
+    @Test
+    public void allert_test3() throws InterruptedException {
+
+        //TC #3: Information alert practice
+
+        //2. Go to website: http://practice.cydeo.com/javascript_alerts
+        driver.get("http://practice.cydeo.com/javascript_alerts");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
+
+        //3. Click to “Click for JS Prompt” button
+        WebElement informationPromptButton = driver.findElement(By.xpath("//button[@onclick='jsPrompt()']"));
+
+        informationPromptButton.click();
+        Thread.sleep(2000);
+
+        //4. Send “hello” text to alert
+        Alert alert =driver.switchTo().alert();
+        alert.sendKeys("hello");
+
+
+        //5. Click to OK button from the alert
+        alert.accept();
+
+        //6. Verify “You entered:  hello” text is displayed.
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+
+        Assert.assertTrue(resultText.isDisplayed());
+
+        String expectedResult = "You entered: hello";
+        String actualResult = resultText.getText();
+
+        Assert.assertEquals(actualResult,expectedResult,"Actual test result is NOT as expected");
+
+
+    }
+
+
+
+
     @AfterMethod
     public void teardownMethod(){
         driver.close();
     }
+
 
 
 
