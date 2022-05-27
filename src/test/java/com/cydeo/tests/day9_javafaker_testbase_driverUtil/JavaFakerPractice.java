@@ -19,6 +19,10 @@ public class JavaFakerPractice {
 
         System.out.println("faker.letterify(\"???-????\") = " + faker.letterify("???-????"));
 
+        System.out.println("faker.finance().creditCard() = " + faker.finance().creditCard());
+
+        System.out.println("faker.bothfiy(\"??#?-#??#-?#?#-??#?\") = " + faker.bothify("??#?-#??#-?#?#-??#?"));
+
 
     }
 
