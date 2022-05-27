@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class TC1_WebTable_Order_Verify {
 
     public WebDriver driver;
+
     @BeforeMethod
     public void setupMethod(){
 
