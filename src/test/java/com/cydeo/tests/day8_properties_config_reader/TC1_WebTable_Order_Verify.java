@@ -52,9 +52,6 @@ public class TC1_WebTable_Order_Verify {
 
         Assert.assertEquals(actualBobDate,expectedBobDate);
 
-
-
-
     }
 
     // we use the utility method we created.
