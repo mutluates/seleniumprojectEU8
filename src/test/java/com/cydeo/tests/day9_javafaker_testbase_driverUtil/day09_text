@@ -12,7 +12,7 @@ Today's schedule:
 
 - What is properties file?
 - It is just another type of file just like .txt, and .pdf whatever.
-- But this file has .properties extention.
+- But this file has .properties extension.
 
 - Why do we use properties file? What makes it different then other type of files?
 - It stores value in "key=value" format

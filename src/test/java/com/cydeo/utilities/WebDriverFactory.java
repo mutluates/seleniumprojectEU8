@@ -8,6 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class WebDriverFactory {
 
     public static WebDriver getDriver(String browserType){
+
         if (browserType.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
