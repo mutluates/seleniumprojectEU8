@@ -32,7 +32,7 @@ TODAY'S SCHEDULE:
     -src
         - main
         - test
-    - pom.xml
+        - pom.xml
 
 - What is pom.xml file?
     - It is short for "project object model".

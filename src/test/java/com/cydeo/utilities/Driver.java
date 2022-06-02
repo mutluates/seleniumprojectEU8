@@ -43,13 +43,13 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-                case "edge":
+                    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+               /* case "edge":
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-                    break;
+                    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                    break;*/
             }
 
 

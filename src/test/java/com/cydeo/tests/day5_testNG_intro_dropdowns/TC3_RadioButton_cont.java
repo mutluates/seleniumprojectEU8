@@ -38,7 +38,7 @@ public class TC3_RadioButton_cont {
 
             System.out.println("eachId = " + eachId);
 
-            if (eachId.equals("hockey")) {
+            if (eachId.equals(idValue)) {
                 each.click();
                 System.out.println(eachId + " is selected : " + each.isSelected());
                 break;

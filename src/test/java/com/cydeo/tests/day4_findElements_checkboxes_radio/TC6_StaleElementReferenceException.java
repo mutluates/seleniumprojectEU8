@@ -11,7 +11,7 @@ public class TC6_StaleElementReferenceException {
 
     public static void main(String[] args) {
 
-        // TC #6: StaleElementReferenceException Task
+        //    TC #6: StaleElementReferenceException Task
         //    1- Open a Chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();

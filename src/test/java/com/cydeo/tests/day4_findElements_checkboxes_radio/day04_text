@@ -126,7 +126,7 @@ findElement vs findElements()
 
 ------------------------------------------------------------------------------------
 
-- checkboxes & radiobuttons
+- checkboxes & radio buttons
 
 - How do you handle checkboxes and radio buttons using Selenium?
 

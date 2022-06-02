@@ -14,10 +14,10 @@ import java.util.concurrent.TimeUnit;
 
 public class TC1_Alert_Practices {
 
-    public  WebDriver driver;
+    public WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
 
         //TC #1: Information alert practice
         //1. Open browser
@@ -27,7 +27,6 @@ public class TC1_Alert_Practices {
 
         //2. Go to website: http://practice.cydeo.com/javascript_alerts
         driver.get("http://practice.cydeo.com/javascript_alerts");
-
 
 
     }
@@ -52,7 +51,7 @@ public class TC1_Alert_Practices {
         //5. Verify “You successfully clicked an alert” text is displayed
         WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
 
-        Assert.assertTrue(resultText.isDisplayed(),"Result text is NOT displayed");
+        Assert.assertTrue(resultText.isDisplayed(), "Result text is NOT displayed");
 
         String expectedText = "You successfully clicked an alert";
         String actualText = resultText.getText();
@@ -81,12 +80,12 @@ public class TC1_Alert_Practices {
         //5. Verify “You clicked: Ok” text is displayed.
         WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
 
-        Assert.assertTrue(resultText.isDisplayed(),"You clicked: Ok");
+        Assert.assertTrue(resultText.isDisplayed(), "You clicked: Ok");
 
         String expectedResult = "You clicked: Ok";
         String actualResult = resultText.getText();
 
-        Assert.assertEquals(actualResult,expectedResult,"Actual result test is NOT as expected !!!");
+        Assert.assertEquals(actualResult, expectedResult, "Actual result test is NOT as expected !!!");
 
 
     }
@@ -99,7 +98,7 @@ public class TC1_Alert_Practices {
         //2. Go to website: http://practice.cydeo.com/javascript_alerts
         driver.get("http://practice.cydeo.com/javascript_alerts");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
         //3. Click to “Click for JS Prompt” button
@@ -109,7 +108,7 @@ public class TC1_Alert_Practices {
         Thread.sleep(2000);
 
         //4. Send “hello” text to alert
-        Alert alert =driver.switchTo().alert();
+        Alert alert = driver.switchTo().alert();
         alert.sendKeys("hello");
 
 
@@ -124,20 +123,14 @@ public class TC1_Alert_Practices {
         String expectedResult = "You entered: hello";
         String actualResult = resultText.getText();
 
-        Assert.assertEquals(actualResult,expectedResult,"Actual test result is NOT as expected");
+        Assert.assertEquals(actualResult, expectedResult, "Actual test result is NOT as expected");
 
 
     }
-
-
-
 
     @AfterMethod
-    public void teardownMethod(){
+    public void teardownMethod() {
         driver.close();
     }
-
-
-
 
 }

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class ShoesMen {
+public class MenShoes {
 
 
     public WebDriver driver;
@@ -38,11 +38,12 @@ public class ShoesMen {
 
         Thread.sleep(2000);
 
-        List<WebElement> menShoes  = driver.findElements(By.xpath("//ul/li/div/div"));
+        List<WebElement> menShoes  = driver.findElements(By.xpath("//*[@id=\"global-enhancements-search-suggestions\"]/ul/li[8]/div/div/div/strong"));
 
         for (WebElement each : menShoes) {
 
             if (each.getText().trim().equals("shoes men")){
+                System.out.println(each.getText());
                 each.click();
                 break;
             }
