@@ -1,8 +1,10 @@
 package com.cydeo.tests.day5_testNG_intro_dropdowns;
 
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC7_Selecting_value {
@@ -26,6 +28,10 @@ public class TC7_Selecting_value {
 
 
         //5. Verify title is “Facebook - Log In or Sign Up”
+        //String expectedTitle = "Facebook - log in or sign up";
+        //String actualTitle = Driver.getDriver().getTitle();
+
+        //Assert.assertEquals(expectedTitle,actualTitle,"Title verification failed");
 
 
     }
