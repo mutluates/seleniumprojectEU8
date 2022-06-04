@@ -44,6 +44,27 @@ public class WebTableUtils {
         Assert.assertEquals(actualOrderDate,expectedOrderData);
     }
 
+    //C #3: Create a custom method
+    //1- Open a chrome browser
+    //2- Go to: https://practice.cydeo.com/tables
+    //3- Write custom method:
+    //
+    //• Method name: getTableGetEmail()
+    //• Return type: void
+    //• Arg1: WebDriver driver
+    //• Arg2: String tableNum
+    //• Arg3: String firstName
+
+    public static void returnTableEmail(WebDriver driver,int tableNumber,String customerName){
+
+        String locator = "//table["+tableNumber+"]//tbody/tr/td[.='"+ customerName +"']/following-sibling::td[1]";
+
+        WebElement emailText = driver.findElement(By.xpath(locator));
+
+        System.out.println(emailText.getText());
+
+    }
+
 
 
 }

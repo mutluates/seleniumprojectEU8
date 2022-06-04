@@ -71,6 +71,13 @@ public class TC1_WebTable_Order_Verify {
 
     }
 
+    @Test
+    public void test4(){
+
+        driver.get("https://practice.cydeo.com/tables");
+        WebTableUtils.returnTableEmail(driver,1,"John");
+    }
+
 
 
 }
