@@ -1,5 +1,6 @@
 package com.cydeo.utilities;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -23,6 +24,21 @@ public class ReviewUtils {
 
              driver.findElement(By.linkText(link)).click();
              staticWait(1);
+    }
+
+    public static double addProduct(WebDriver driver,String category ,String product){
+
+        getLink(driver,category);  // click on category
+        getLink(driver,product);   // click on category
+        //Let's get product's price
+        String priceText = driver.findElement(By.tagName("h3")).getText();
+        double price = Double.parseDouble(priceText.substring(1,4));
+
+        getLink(driver,"Add to cart");
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+
+        return price;
     }
 
     public static void windowHandle(WebDriver driver, String pickTitle){
