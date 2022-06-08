@@ -23,7 +23,7 @@ public class TC1_Circle_Drag_and_Drop {
 
         BrowserUtils.sleep(2);
         Actions actions = new Actions(Driver.getDriver());
-        actions.dragAndDrop(smallCircle,bigCircle).perform();
+        actions.clickAndHold(smallCircle).pause(2000).moveToElement(bigCircle).pause(2000).release(bigCircle).perform();
 
 
 
