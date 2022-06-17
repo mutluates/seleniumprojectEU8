@@ -1,7 +1,6 @@
 package com.cydeo.tests.day5_testNG_intro_dropdowns;
 
 
-import com.cydeo.utilities.HandleWait;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

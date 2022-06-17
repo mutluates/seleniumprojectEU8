@@ -2,6 +2,7 @@ package com.cydeo.tests.day5_testNG_intro_dropdowns;
 
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
+import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -23,15 +24,20 @@ public class TC7_Selecting_value {
         Thread.sleep(3000);
 
         //4. Select Facebook from dropdown
-        WebElement faceBookObtion = Driver.getDriver().findElement(By.xpath("//a[text()='Facebook']"));
-        faceBookObtion.click();
+        WebElement faceBookOption = Driver.getDriver().findElement(By.xpath("//a[text()='Facebook']"));
+        faceBookOption.click();
 
 
         //5. Verify title is “Facebook - Log In or Sign Up”
         //String expectedTitle = "Facebook - log in or sign up";
-        //String actualTitle = Driver.getDriver().getTitle();
+         String actualTitle = Driver.getDriver().getTitle();
 
-        //Assert.assertEquals(expectedTitle,actualTitle,"Title verification failed");
+       if (actualTitle.equals("Facebook - log in or sign up")){
+
+           System.out.println("Passed");
+       }else {
+           System.out.println("Failed");
+       }
 
 
     }
